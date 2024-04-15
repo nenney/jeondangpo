@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>방명록</title>
+</head>
+<body>
+
+<h1>방명록</h1>
+
+<!-- 방명록 입력 폼 -->
+<form action="#" method="post" id="guestbookForm">
+    <label for="name">이름:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="message">메시지:</label>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+    
+    <input type="submit" value="제출">
+</form>
+
+<!-- 방명록 출력 -->
+<h2>방명록 리스트</h2>
+<ul id="guestbookList">
+    <!-- 방명록이 여기에 추가됩니다. -->
+</ul>
+
+<script>
+    // 폼 제출 시 실행되는 함수
+    document.getElementById('guestbookForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // 기본 제출 이벤트 제거
+
+        // 입력된 값 가져오기
+        var name = document.getElementById('name').value;
+        var message = document.getElementById('message').value;
+
+        // 방명록 리스트에 추가
+        var guestbookList = document.getElementById('guestbookList');
+        var listItem = document.createElement('li');
+        listItem.textContent = `${name}: ${message}`;
+        guestbookList.appendChild(listItem);
+
+        // 입력 필드 초기화
+        document.getElementById('name').value = '';
+        document.getElementById('message').value = '';
+    });
+</script>
+
+</body>
+</html>
