@@ -26,26 +26,38 @@
     <!-- 메인 컨텐츠 영역 -->
     <main>
         <!-- 팀 소개 섹션 -->
-        <section id="about">
+        <div class="container">
+        <div id="about">
             <h2>방명록</h2>
             <p>글 남기고 가라..</p>
-        </section>
+        </div>
+    
 
+       
 
         <!-- 방명록 입력 폼 -->
+        <div id="guestbook-container">
     <form id="guestbook-form">
         <input type="text" id="name" placeholder="이름" required>
-        <textarea id="message" placeholder="메시지" required></textarea>
         <button type="submit">전송</button>
+        <textarea id="message" placeholder="메시지" required></textarea>
+        
     </form>
 
+    <br><br><br>
      <!-- 방명록 목록 -->
      <ul id="guestbook-list">
     </ul>
+</div>
 
+<div id="bye">
+    <p>잘 남기고 간다.</p>
+</div>
+</div>
       <!-- Firebase 및 방명록 스크립트 로드 -->
       <script type="module" src="guestbook.js"></script>
-        
+    
+      
 
     </main>
 

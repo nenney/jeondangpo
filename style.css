@@ -1,6 +1,5 @@
 /* 전체 페이지 스타일 */
 body {
-    font-family: 'Noto Serif KR', serif;
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
@@ -11,12 +10,14 @@ body {
 /* 헤더 스타일 */
 header {
     background-color: #333;
+    font-family: 'Noto Serif KR', serif;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     border-bottom: 4px solid #666;
 }
 
+/*헤더 글(전당포)*/
 header h1 {
     margin: 0;
     font-size: 2.5em;
@@ -48,29 +49,16 @@ header h1 {
     border-bottom-color: #fff;
 }
 
-/* 메인 컨텐츠 스타일 */
-main {
-    padding: 30px;
-}
 #about {
     background-image: url('1bin.jpg'); /* 이미지 파일 경로를 입력해주세요 */
     background-size: cover; /* 이미지를 섹션 내에 완전히 표시 */
     background-position: center; /* 이미지를 섹션 중앙에 배치 */
-    padding: 60px 40px; /* 상하 60px, 좌우 40px의 내부 여백 설정 */
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    width: 70%; /* 섹션의 너비를 80%로 설정 */
+    width: 30%; /* 섹션의 너비를 80%로 설정 */
     height: 500px; /* 섹션의 높이를 400px로 설정 */
-    margin: 20px auto; /* 섹션을 수평 중앙에 배치 */
-}
-
-#about, #guestbook-form {
-    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    float:left;
 }
 
 #about h2 {
@@ -83,50 +71,98 @@ main {
     color : #FFFFFF;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
 }
-#guestbook-form input[type="text"],
+
+#bye {
+    background-image: url('goodbye.jpg');
+    background-size: cover; /* 이미지를 섹션 내에 완전히 표시 */
+    background-position: center; /* 이미지를 섹션 중앙에 배치 */
+    width: 30%; /* 섹션의 너비를 80%로 설정 */
+    height: 500px; /* 섹션의 높이를 400px로 설정 */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: auto; /* 왼쪽 여백을 auto로 설정하여 오른쪽으로 이동 */
+}
+
+#bye p {
+    font-size: 1.3em; /* 내용 글자 크기를 조금 더 크게 설정 */
+    color : #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
+}
+
+
+
+#guestbook-form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+/* 방명록 폼의 입력 필드와 텍스트 영역 스타일 */
+#guestbook-form input[type="text"]{
+    width: 30%;
+    padding:10px;
+    display: inline-block; /* inline-block으로 변경 */
+    border-radius: 5px; /* 테두리 둥글게 만들기 */
+}
 #guestbook-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 95%; /* 메시지 입력 필드 너비 */
+    float: right; /* 오른쪽으로 정렬 */
+    margin-left: 5%; /* 왼쪽 여백 설정 */
+    padding: 15px; /* 내부 여백 설정 */
+    margin-bottom: 15px; /* 아래 여백 설정 */
+    border-radius: 5px; /* 테두리 둥글게 만들기 */
 }
 
+/* 방명록 폼의 제출 버튼 스타일 */
 #guestbook-form button {
-    padding: 15px 25px;
-    background-color: #444;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 1em;
+    padding: 10px 20px; /* 내부 여백 설정 */
+    background-color: #444; /* 배경색 설정 */
+    color: #fff; /* 글자색 설정 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px; /* 테두리 둥글게 만들기 */
+    cursor: pointer; /* 마우스 커서 스타일 변경 */
+    transition: background-color 0.3s; /* 배경색 변화 시 애니메이션 효과 */
+    font-size: 0.9em; /* 폰트 크기 설정 */
+    float:right;
+    margin-bottom: 10px; /* 위 여백 설정 */
 }
 
+/* 방명록 폼의 제출 버튼에 호버 효과 스타일 */
 #guestbook-form button:hover {
-    background-color: #555;
+    background-color: #555; /* 호버 시 배경색 변경 */
 }
-
+/* 방명록 목록 스타일 */
 #guestbook-list {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 내부 패딩 제거 */
+    max-width: 500px; /* 최대 너비 설정 */
+    margin: 30px auto; /* 위아래 30px, 좌우 자동 여백 설정 */
 }
 
 #guestbook-list li {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 1em;
+    background-color: rgb(241, 234, 234); /* 배경색 설정 */
+    padding: 10px; /* 내부 패딩 설정 */
+    margin-bottom: 10px; /* 아래 여백 설정 */
+    border-radius: 5px; /* 테두리 둥글게 설정 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+    font-size: 0.9em; /* 글자 크기 설정 */
+    border: 2px solid black; /* 테두리 설정 */
 }
 
 #guestbook-list li strong {
-    font-weight: bold;
-    margin-right: 10px;
+    font-weight: bold; /* 글자 굵게 설정 */
+    margin-right: 10px; /* 오른쪽 여백 설정 */
 }
 
 #guestbook-list li span {
-    display: block;
-    margin-top: 5px;
+    display: block; /* 블록 레벨로 표시 */
+    margin-top: 4px; /* 위 여백 설정 */
+}
+.container {
+    display: flex; /* flexbox 사용 */
+    justify-content: space-between; /* 섹션 간에 동일한 간격으로 정렬 */
+}
+
+#guestbook-container {
+    flex-grow: 1; /* 남은 공간을 채우기 위해 섹션을 확장 */
+    margin: 10 10px; /* 왼쪽과 오른쪽 여백 */
 }
