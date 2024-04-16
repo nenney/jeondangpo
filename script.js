@@ -42,8 +42,15 @@ async function openModal(dataKey) {
             const data = docSnap.data();
 
             // 모달에 데이터 표시(우리 팀 내용에 따라 수정 필요)
-            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalName').innerText = data.name;
+            document.getElementById('modalOne').innerText = data.one;  //소개한마디
+            document.getElementById('modalMBTI').innerText = data.mbti;
+            document.getElementById('modalBlog').innerText = data.blog;
+            document.getElementById('modalGoal').innerText = data.goal;
+            document.getElementById('modalHobby').innerText = data.hobby;
+            document.getElementById('modalPro').innerText = data.pro;  //장점
             document.getElementById('modalContent').innerText = data.content;
+            document.getElementById('modalPhoto').innerText = data.photo;  //사진 주소
 
             // 모달 띄우기
             $(introModal).modal('show');
