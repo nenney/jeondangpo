@@ -5,18 +5,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>전당포</title>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+        * {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            /* 최대 너비 설정 */
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            /* 로고 아래 여백 설정 */
+        }
+
+        .nav-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-menu li {
+            margin-right: 20px;
+        }
+
+        .nav-menu li a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            color: #ffa500;
+        }
+
+        .modal-body {
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-content {
+            width: 800px;
+        }
+
+        #modalPhoto {
+            margin-right: 30px;
+        }
+
+        .int p {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .modal-header {
+            background-color: #333
+        }
+
+        .modal-header>h5 {
+            color: #fff;
+        }
+
+        #imageContainer {
+            display: flex;
+            /* 이미지를 가로로 나란히 배치하기 위해 Flexbox 사용 */
+            justify-content: space-around;
+            /* 이미지들을 가운데 정렬하고 사이 공간을 동일하게 배분 */
+            flex-wrap: wrap;
+            /* 이미지들이 넘칠 경우 다음 줄로 넘어가게 함 */
+        }
+
+        #imageContainer img {
+            max-width: 200px;
+            /* 이미지의 가로 너비를 200px로 설정 */
+            height: auto;
+            /* 비율에 맞게 높이를 자동으로 조정 */
+            margin-bottom: 20px;
+            /* 이미지 아래 여백 추가 (선택사항) */
+        }
+    </style>
 </head>
 
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">전당포</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">팀소개</a></li>
+                <li><a href="book.html">방명록</a></li>
+                <li><a href="services.html">뮤직 플레이리스트</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- 팀원 사진들 (클릭 시 모달창) -->
     <div id="imageContainer">
         <img src="image/image1.jpg" alt="Image 1" data-key="data1">
@@ -25,39 +144,35 @@
         <img src="image/image4.jpg" alt="Image 4" data-key="data4">
         <img src="image/image5.jpg" alt="Image 5" data-key="data5">
     </div>
-
     <!-- 팀원 소개 모달 -->
     <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-
                 <div class="modal-header">
                     <h5>팀원을 소개합니다!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
                 <div class="modal-body">
-                    <!-- 우리팀 소개 항목에 따라 변경 필요 -->
-                    <h5 class="modal-name" id="modalName"></h5>
-                    <p class="modal-one" id="modalOne"></p> <!--한마디소개-->
-                    <p class="modal-MBTI" id="modalMBTI"></p>
-                    <p class="modal-blog" id="modalBlog"></p>
-                    <p class="modal-goal" id="modalGoal"></p>
-                    <p class="modal-hobby" id="modalHobby"></p>
-                    <p class="modal-pro" id="modalPro"></p> <!--장점-->
-                    <p class="modal-content" id="modalContent"></p> <!--그외소개-->
-                    <p class="modal-photo" id="modalPhoto"></p> <!--사진주소-->
+                    <div class="d-flex">
+                        <img id="modalPhoto" src="" alt="팀원 사진">
+                        <div>
+                            <!-- 우리팀 소개 항목에 따라 변경 필요 -->
+                            <h5 class="modal-title" id="modalTitle"></h5>
+                            <div class="int">
+                                <h5 id="modalName"></h5>
+                                <p id="modalOne"></p>
+                                <p id="modalMBTI"></p>
+                                <p id="modalBlog"></p>
+                                <p id="modalGoal"></p>
+                                <p id="modalHobby"></p>
+                                <p id="modalPro"></p>
+                                <p id="modalContent"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
-        </div>
-    </div>
-
-
-
-    
-    <script type="module" src="./script.js"></script>
-
+            <script type="module" src="./script.js"></script>
 </body>
 
 </html>
