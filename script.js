@@ -50,6 +50,13 @@ async function openModal(dataKey) {
             document.getElementById('modalHobby').innerText = data.hobby;
             document.getElementById('modalPro').innerText = data.pro;  //장점
             document.getElementById('modalContent').innerText = data.content;
+<<<<<<< HEAD
+=======
+
+            //modalPhoto의 src 속성 설정
+            const modalPhoto = document.getElementById('modalPhoto');
+            modalPhoto.src = data.photo; // data.photo는 이미지 URL
+>>>>>>> e142c9d8697386eaba2cd121dd67f5047a7ab766
 
             //modalPhoto의 src 속성 설정
             const modalPhoto = document.getElementById('modalPhoto');
