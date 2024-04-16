@@ -1,0 +1,153 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+* {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    /* 최대 너비 설정 */
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    /* 로고 아래 여백 설정 */
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #ffa500;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+}
+
+.modal-content {
+    width: 800px;
+}
+
+#modalPhoto {
+    margin-right: 30px;
+}
+
+.int p {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.modal-header {
+    background-color: #333
+}
+
+.modal-header>h5 {
+    color: #fff;
+}
+
+.accordion{
+    padding: 50px 100px 20px 100px;
+    text-align: center;
+}
+
+#introduce {
+    font-size: 3rem; /* 더 큰 글꼴 크기 */
+    font-weight: bold; /* 더 굵은 글꼴 */
+    color: #ffd700; /* 텍스트 색상을 더 진한 옐로우로 변경 */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* 글꼴에 그림자 추가 */
+    background-color: #222; /* 배경색을 더 어두운 회색으로 변경 */
+    padding: 20px; /* 내부 여백 추가 */
+    margin-top: 50px; /* 위쪽 여백 추가 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 0; /* 아래쪽 여백 제거 */
+}
+
+#imageContainer {
+    display: flex; /* 이미지들을 가로로 정렬 */
+    justify-content: center; /* 이미지들을 가운데 정렬 */
+    gap: 100px; /* 이미지들 사이의 간격 설정 */
+    flex-wrap: wrap;/* 이미지들이 넘칠 경우 다음 줄로 넘어가게 함 */
+    background-color: #ECE6CC; /* 배경색을 어두운 회색으로 변경 */
+    margin-top: 0; /* 위쪽 여백 제거 */
+    padding: 20px 0; /* 이미지 컨테이너 상단과 하단에 여백 추가 */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
+}
+
+
+#imageContainer img {
+    max-width: 200px;
+    /* 이미지의 가로 너비를 200px로 설정 */
+    height: 200px;
+    /* 비율에 맞게 높이를 자동으로 조정 */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* 이미지 아래 여백 추가 (선택사항) */
+
+    border-radius: 50%;
+    /* 이미지를 원형으로 만듦 */
+    /* border: 2px solid #ccc; */
+    /* 테두리 추가 (선택사항) */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* 보다 짙은 그림자 효과 */
+    transition: transform 0.3s ease-in-out;
+    animation: rotateImage 5s infinite linear; /* 이미지를 5초 동안 무한히 회전시키는 애니메이션 추가 */
+    filter: grayscale(100%) brightness(80%) contrast(100%);
+    
+}
+
+@keyframes rotateImage {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#imageContainer img:hover {
+    transform: scale(1.1) rotate(10deg); /* 마우스를 올릴 때 이미지를 약간 회전시켜 보다 포스 있는 느낌을 줌 */
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+    /* 마우스 호버 시 필터 제거하여 이미지를 원래대로 복원 */
+    
+}
