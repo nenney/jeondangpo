@@ -54,7 +54,7 @@ onSnapshot(q, (snapshot) => {
         const li = document.createElement('li');
         const date = data.timestamp.toDate(); // Firebase Timestamp를 JavaScript Date 객체로 변환
         li.innerHTML = `
-            <strong>${data.name}</strong> : <span>${data.message}</span> (${date.toLocaleDateString()} ${date.toLocaleTimeString()}): 
+            <strong>${data.name}</strong> : <span>${data.message}</span> (${date.toLocaleDateString()} ${date.toLocaleTimeString()}) 
         `;
         guestbookList.appendChild(li);
     });
