@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팀소개</title>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+    <!-- CSS 링크 및 스타일 시트 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 헤더 영역 -->
+    <header>
+      <h1>전당포</h1>
+
+      <nav
+        class="navbar bg-dark border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        <ul>
+          <li><a href="#">팀소개</a></li>
+          <li><a href="#">방명록</a></li>
+          <li><a href="#">뮤직 플레이리스트</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main>
+      <!-- 팀 소개 섹션 -->
+      <section id="about">
+        <h2>방명록</h2>
+        <p>글 남기고 가라..</p>
+      </section>
+
+      <!-- 방명록 입력 폼 -->
+      <form id="guestbook-form">
+        <input type="text" id="name" placeholder="이름" required />
+        <textarea id="message" placeholder="메시지" required></textarea>
+        <button type="submit">전송</button>
+      </form>
+
+      <!-- 방명록 목록 -->
+      <ul id="guestbook-list"></ul>
+
+      <!-- Firebase 및 방명록 스크립트 로드 -->
+      <script type="module" src="guestbook.js"></script>
+    </main>
+  </body>
+</html>

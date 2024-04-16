@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팀소개</title>
+    <link
+      rel="stylesheet"
+      href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css"
+    />
+    <!-- CSS 링크 및 스타일 시트 -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('guestbook-form')
+      const noticeBoard = document.querySelector('.notice_board')
+      let postNumbers = []
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault() // 폼 제출 기본 동작 방지
+
+        // 입력된 이름과 메시지 가져오기
+        const name = document.getElementById('name').value
+        const message = document.getElementById('message').value
+
+        // 새로운 게시물 요소 생성
+        const newPost = document.createElement('div')
+
+        // 배열에서 가장 큰 번호를 가져와서 새로운 번호 설정
+        let newPostNumber =
+          postNumbers.length > 0 ? Math.max(...postNumbers) + 1 : 1
+
+        // post 클래스 추가
+        newPost.classList.add('post')
+
+        // post-번호 클래스 추가
+        newPost.classList.add('post-' + newPostNumber)
+
+        const title = document.createElement('div')
+        title.classList.add('post-title')
+        title.textContent = newPostNumber + '번째 게시물 제목' // 게시물 번호를 사용하여 제목 설정
+
+        const content = document.createElement('div')
+        content.classList.add('post-content')
+        content.textContent = message // 입력된 메시지로 콘텐츠 설정
+
+        const info = document.createElement('div')
+        info.classList.add('post-info')
+        info.textContent = '작성자: ' + name // 입력된 이름으로 작성자 정보 설정
+
+        // 삭제 버튼 생성
+        const deleteButton = document.createElement('button')
+        deleteButton.classList.add('delete')
+        deleteButton.textContent = '삭제'
+
+        deleteButton.addEventListener('click', function () {
+          // 부모 노드를 통해 삭제 버튼의 상위 요소인 게시물 요소를 찾고 삭제
+          newPost.remove()
+
+          // 삭제 후 게시물들의 번호 조정
+          postNumbers = postNumbers.filter((num) => num !== newPostNumber) // 배열에서 삭제된 번호 제거
+
+          // 삭제된 번호 이후의 번호들을 수정하여 연속된 숫자로 만듦
+          const deletedIndex = postNumbers.indexOf(newPostNumber)
+          if (deletedIndex !== -1) {
+            for (let i = deletedIndex; i < postNumbers.length; i++) {
+              postNumbers[i]--
+            }
+          }
+
+          // 게시물들의 번호를 갱신
+          postNumbers.forEach((num, index) => {
+            const post = noticeBoard.querySelector('.post-' + num)
+            if (post) {
+              post.querySelector('.post-title').textContent =
+                index + 1 + '번째 게시물 제목'
+            }
+          })
+          console.log(postNumbers)
+        })
+
+        // 게시물에 삭제 버튼 추가
+        info.appendChild(deleteButton)
+
+        // 새로운 게시물을 notice_board에 추가
+        newPost.appendChild(title)
+        newPost.appendChild(content)
+        newPost.appendChild(info)
+
+        noticeBoard.appendChild(newPost) // 새로운 게시물 추가
+
+        // 게시물 번호 배열에 추가
+        postNumbers.push(newPostNumber)
+
+        // 폼 초기화
+        form.reset()
+      })
+    })
+  </script>
+  <body>
+    <!-- 헤더 영역 -->
+    <header>
+      <h1>씹어삼키조</h1>
+
+      <nav
+        class="navbar bg-dark border-bottom border-body"
+        data-bs-theme="dark"
+      >
+        <ul>
+          <li><a href="#">팀소개</a></li>
+          <li><a href="#">방명록</a></li>
+          <li><a href="#">뮤직 플레이리스트</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main>
+      <!-- 팀 소개 섹션 -->
+      <section id="about">
+        <h2>방명록</h2>
+        <p>글 남기고 가라..</p>
+      </section>
+
+      <!-- 방명록 입력 폼 -->
+      <form id="guestbook-form">
+        <input type="text" id="name" placeholder="이름" required />
+        <textarea id="message" placeholder="메시지" required></textarea>
+        <button type="submit" class="submit">전송</button>
+      </form>
+
+      <!-- 방명록 목록 -->
+      <div class="board">
+        <div class="notice_board">
+          <!-- <div class="post">
+            <div class="post-title">첫 번째 게시물 제목</div>
+            <div class="post-content">
+              첫 번째 게시물 내용입니다. 간단한 설명이 들어갑니다.
+            </div>
+            <div class="post-info">작성자: 홍길동</div>
+            <button class="delete">삭제</button>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Firebase 및 방명록 스크립트 로드 -->
+      <script type="module" src="guestbook.js"></script>
+    </main>
+  </body>
+</html>

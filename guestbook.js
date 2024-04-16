@@ -1,61 +1,75 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"; // Firestore 함수들 import
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js'
+import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js'
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  onSnapshot,
+} from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js' // Firestore 함수들 import
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//일단 테스트를 위해서 내 파이어베이스에 작업 후 full할 때는 외부 파이어베이스로 교체
 const firebaseConfig = {
-    apiKey: "AIzaSyBGltk7ZUV6861w4lh7x7XhpdDrVu4GD_0",
-    authDomain: "test1-bcc6e.firebaseapp.com",
-    projectId: "test1-bcc6e",
-    storageBucket: "test1-bcc6e.appspot.com",
-    messagingSenderId: "59373514993",
-    appId: "1:59373514993:web:8a4686602f827d5c3af950",
-    measurementId: "G-7SP7Q00TRM"
-};
+  apiKey: 'AIzaSyBA9ngdQNhSZSdO3P-QomWTTZV5WDkrjZE',
+  authDomain: 'spare-3a004.firebaseapp.com',
+  projectId: 'spare-3a004',
+  storageBucket: 'spare-3a004.appspot.com',
+  messagingSenderId: '517067543010',
+  appId: '1:517067543010:web:db90ef5043ec9b157529bb',
+}
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore();
+const app = initializeApp(firebaseConfig)
+const analytics = getAnalytics(app)
+const db = getFirestore()
 
-// 방명록 폼
-const guestbookForm = document.getElementById('guestbook-form');
-guestbookForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
+// Firebase 데이터베이스 참조
+var database = firebase.database()
 
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
+document
+  .getElementById('guestbook-form')
+  .addEventListener('submit', function (event) {
+    event.preventDefault() // 기본 동작 중지
 
-    try {
-        // Firestore에 데이터 추가
-        await addDoc(collection(db, 'guestbook'), {
-            name: name,
-            message: message,
-            timestamp: new Date()
-        });
-        guestbookForm.reset();
-    } catch (error) {
-        console.error("Error adding document: ", error);
-    }
-});
+    // 사용자 입력 가져오기
+    var name = document.getElementById('name').value
+    var message = document.getElementById('message').value
 
-// 방명록 목록
-const guestbookList = document.getElementById('guestbook-list');
+    // 데이터베이스에 데이터 추가
+    database.ref('guestbook').push({
+      name: name,
+      message: message,
+    })
 
-// Firestore 데이터 가져오기
-const q = query(collection(db, 'guestbook'), orderBy('timestamp', 'desc'));
-onSnapshot(q, (snapshot) => {
-    guestbookList.innerHTML = '';
-    snapshot.forEach((doc) => {
-        const data = doc.data();
-        const li = document.createElement('li');
-        const date = data.timestamp.toDate(); // Firebase Timestamp를 JavaScript Date 객체로 변환
-        li.innerHTML = `
-            <strong>${data.name}</strong> : <span>${data.message}</span> (${date.toLocaleDateString()} ${date.toLocaleTimeString()}): 
-        `;
-        guestbookList.appendChild(li);
-    });
-});
+    // 입력 필드 초기화
+    document.getElementById('name').value = ''
+    document.getElementById('message').value = ''
+
+    console.log('데이터가 Firebase에 성공적으로 저장되었습니다.')
+  })
+
+// 데이터베이스에서 데이터 가져오기
+database.ref('guestbook').on('child_added', function (snapshot) {
+  var data = snapshot.val()
+  var postDiv = document.createElement('div')
+  postDiv.classList.add('post')
+
+  var titleDiv = document.createElement('div')
+  titleDiv.classList.add('post-title')
+  titleDiv.textContent = data.name
+
+  var contentDiv = document.createElement('div')
+  contentDiv.classList.add('post-content')
+  contentDiv.textContent = data.message
+
+  postDiv.appendChild(titleDiv)
+  postDiv.appendChild(contentDiv)
+
+  var noticeBoard = document.querySelector('.notice_board')
+  noticeBoard.appendChild(postDiv)
+
+  console.log('데이터를 Firebase에서 성공적으로 가져왔습니다.')
+})
