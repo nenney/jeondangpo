@@ -1,2 +1,54 @@
-시작
-두번째 수정
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전당포</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- 팀원 사진들 (클릭 시 모달창) -->
+    <div id="imageContainer">
+        <img src="image1.jpg" alt="Image 1" data-key="data1">
+        <img src="image2.jpg" alt="Image 2" data-key="data2">
+        <img src="image3.jpg" alt="Image 3" data-key="data3">
+        <img src="image4.jpg" alt="Image 4" data-key="data4">
+        <img src="image5.jpg" alt="Image 5" data-key="data5">
+    </div>
+
+    <!-- 팀원 소개 모달 -->
+    <div class="modal fade" id="introModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5>팀원을 소개합니다!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- 우리팀 소개 항목에 따라 변경 필요 -->
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <p class="modal-content" id="modalContent"></p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <script type="module" src="./script.js"></script>
+
+</body>
+
+</html>
