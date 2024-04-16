@@ -87,6 +87,10 @@ header {
     color: #fff;
 }
 
+.accordion{
+    padding: 50px 100px 20px 100px;
+    text-align: center;
+}
 
 #introduce {
     font-size: 3rem; /* 더 큰 글꼴 크기 */
