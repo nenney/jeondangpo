@@ -8,7 +8,7 @@ body {
     background-color: #0B0806;
     background-image: url('image/team.jpg');
     background-size: 1700px auto;
-    background-position: calc(50% + 250px) calc(50% - 50px);
+    background-position: calc(50% + 250px) calc(50% - 730px);
     background-repeat: no-repeat;
 }
 
@@ -139,7 +139,7 @@ header {
 }
 
 #introduce {
-    font-family: 'Noto Serif KR', serif;
+    /* font-family: 'Noto Serif KR', serif; */
     font-size: 45px; /* 더 큰 글꼴 크기 */
     font-weight: bold;
     color: #ffd700; /* 텍스트 색상을 더 진한 옐로우로 변경 */
@@ -150,17 +150,11 @@ header {
     padding-bottom: 20px; /* 내부 여백 추가 */
     text-align: center; /* 가운데 정렬 */
     margin-bottom: 0; /* 아래쪽 여백 제거 */
+
+    text-shadow: 2px 2px 4px rgb(55, 0, 221);
 }
 
-#introduce::after {
-    content: ""; /* 가상 요소 내용 없음 */
-    position: absolute; /* 절대 위치 지정 */
-    left: 0; /* 왼쪽 정렬 */
-    bottom: -45px; /* 텍스트 아래로 이동하여 밑줄의 높이 조정 */
-    width: 100%; /* 너비를 텍스트 너비로 설정 */
-    height: 1.5px; /* 밑줄 높이 지정 */
-    background-color: #ffd700; /* 밑줄 색상 지정 */
-}
+
 
 #imageContainer {
     display: flex; /* 이미지들을 가로로 정렬 */
@@ -210,6 +204,111 @@ header {
     
 }
 
+
+.tmiBox{
+    width: 100%;
+    height: 800px;
+    background-image: url('image/tmi.jpg');
+}
+
+#tmiTitle{
+    font-weight: bold;
+    font-size: 60px;
+    color: red;
+    padding-top:100px;
+    margin-left: 900px;
+    text-shadow: 2px 2px 4px rgb(43, 0, 255);
+}
+
+#tmiInfo{
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    padding-top:50px;
+    margin-left: 900px;
+}
+
+
+
+.mainTitle{
+    display: flex; /* Flex 컨테이너로 설정 */
+    justify-content: center; /* 요소들을 수평 중앙으로 정렬 */
+    padding-top:150px;
+}
+
+#mindset{
+    font-size: 70px; /* 더 큰 글꼴 크기 */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(43, 0, 255);
+    /* text-align: center; */
+    color: white; /* 텍스트 색상을 더 진한 옐로우로 변경 */
+    margin-right: 600px;
+
+}
+
+#rules{
+    font-size: 70px; /* 더 큰 글꼴 크기 */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgb(214, 0, 0);
+    /* text-align: center; */
+    color: white; /* 텍스트 색상을 더 진한 옐로우로 변경 */
+    margin-left: 370px;
+
+}
+
+.mainContainer {
+    display: flex; /* Flex 컨테이너로 설정 */
+    justify-content: center; /* 요소들을 수평 중앙으로 정렬 */
+    padding-top:1px;
+    padding-bottom: 180px;
+}
+
+.ourMind{
+    position: relative; /* 부모 요소에 대해 상대적인 위치 지정 */
+    width: 500px;
+    height: 500px;
+    /* background-color: #ffffff;
+    padding-top: 100px; */
+    background-image: url('image/teeth.jpg');
+    background-size: cover;
+    margin-right: 200px;
+    border-radius: 30px;
+}
+
+#mind{
+    font-size: 70px; /* 더 큰 글꼴 크기 */
+    font-weight: bold;
+    /* text-align: center; */
+    color: black; /* 텍스트 색상을 더 진한 옐로우로 변경 */
+    
+    position: absolute; 
+    padding-top:40px;
+    padding-left:30px;
+
+
+}
+
+.ourRule{
+    width: 800px;
+    height: 500px;
+    background-image: url('image/blackboard.png');
+    background-size: 106%;
+    background-position: center;
+}
+
+#rule_blackboard{
+    font-size: 30px; /* 더 큰 글꼴 크기 */
+    font-weight: bold;
+    /* text-align: center; */
+    color: white; /* 텍스트 색상을 더 진한 옐로우로 변경 */
+    
+    
+    
+    padding-top:130px;
+    padding-left:130px;
+}
+
+
 .modal-body {
     display: flex;
     align-items: center;
@@ -255,3 +354,4 @@ header {
     width: 100%;
     max-width: none;
 }
+
