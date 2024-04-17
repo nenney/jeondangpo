@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
 // Firebase 초기화
 const firebaseConfig = {
@@ -39,9 +39,9 @@ guestbookForm.addEventListener('submit', async function (event) {
 
 // 방명록 목록
 const guestbookList = document.getElementById('guestbook-list');
-
 const q = query(collection(db, 'guestbook'), orderBy('timestamp', 'desc'));
-onSnapshot(q, (snapshot) => {
+
+function renderGuestbookList(snapshot) {
     guestbookList.innerHTML = '';
     snapshot.forEach((doc) => {
         const data = doc.data();
@@ -50,12 +50,36 @@ onSnapshot(q, (snapshot) => {
         li.innerHTML = `
             <strong>${data.name}</strong>  <span>${data.message}</span> (${date.toLocaleDateString()} ${date.toLocaleTimeString()})
         `;
+
+        // 삭제 버튼 추가
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete');
+        deleteButton.textContent = '삭제';
+        deleteButton.dataset.id = doc.id;
+
+        li.appendChild(deleteButton);
         guestbookList.appendChild(li);
     });
+}
+
+// 삭제 버튼 클릭 이벤트 처리
+guestbookList.addEventListener('click', async (event) => {
+    if (event.target.classList.contains('delete')) {
+        const docId = event.target.dataset.id;
+
+        const isConfirmed = window.confirm('정말로 삭제하시겠습니까?');
+        if (isConfirmed) {
+            try {
+                await deleteDoc(doc(db, 'guestbook', docId));
+            } catch (error) {
+                console.error("Error deleting document: ", error);
+            }
+        }
+    }
 });
 
 // 페이지네이션 코드
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const itemsPerPage = 10;
     let currentPage = 1;
 
@@ -63,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
         const guestbookItems = document.querySelectorAll('#guestbook-list li');
-        
+
         guestbookItems.forEach((item, index) => {
             if (index >= start && index < end) {
                 item.style.display = 'block';
@@ -76,6 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function createPagination(totalPages) {
         const pagination = document.getElementById('guestbook-pagination');
         
+        // 기존 페이지네이션 버튼 삭제
+        pagination.innerHTML = '';
+
         for (let i = 1; i <= totalPages; i++) {
             const btn = document.createElement('button');
             btn.classList.add('page-btn');
@@ -86,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         showPage(currentPage);
 
-        pagination.addEventListener('click', function(e) {
+        pagination.addEventListener('click', function (e) {
             if (e.target.classList.contains('page-btn')) {
                 currentPage = parseInt(e.target.dataset.page);
                 updatePagination(totalPages);
@@ -109,8 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
     onSnapshot(q, (snapshot) => {
         const totalItems = snapshot.size;
         const totalPages = Math.ceil(totalItems / itemsPerPage);
-        
+
+        renderGuestbookList(snapshot);
         createPagination(totalPages);
     });
 });
-

@@ -304,3 +304,45 @@ body, #about, #bye {
     margin-top: 30px;
 }
 
+.board {
+    width: 31%; 
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 20px;
+    color: rgb(64, 195, 20);
+  }
+  
+  .notice_board {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    display: none;
+  }
+  
+  .post {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .post:last-child {
+    border-bottom: none; /* 마지막 게시물의 하단 border 제거 */
+  }
+  
+  .post-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .post-content {
+    font-size: 14px;
+    color: rgb(103, 30, 181);
+  }
+  
+  .post-info {
+    font-size: 12px;
+    color: #1ac0b2;
+  }
+  
+  .delete {
+    float: right;
+  }
