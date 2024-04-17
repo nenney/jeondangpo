@@ -77,9 +77,14 @@ header {
     color: #ff4500; /* 호버 시 빨간색으로 변경 */
 }
 
-body h1,h2 {
-    text-align: left; /* 가운데 정렬 추가 */
-    color: white;
+body h2 {
+    text-align: center; /* 가운데 정렬 추가 */
+    color: black;
+}
+body h1 {
+    text-align: center; /* 가운데 정렬 추가 */
+    color: black;
+    margin-left: -50px;
 }
 
 /*아래 리스트*/
@@ -98,10 +103,12 @@ body h1,h2 {
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: white;
+    background-color: #555;
 }
 
 .recommendation-item h2 {
     margin-top: 0;
+    color:white;
 }
 
 .recommendation-item p {
@@ -118,21 +125,26 @@ body h1,h2 {
 
 
 /* 음악 추천 폼 및 목록 스타일 */
-#recommendation-form {
-    background-color: rgba(139, 141, 141, 0.5);
-    max-width: 400px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 30px 0; /* 위아래 여백 */
-    color: white;
+#ballon {
+    position: relative;
+    background-image: url('ballon.jpg'); /* ballon 이미지 경로를 적어주세요 */
+    background-size: cover; /* 이미지를 div 크기에 맞게 조절 */
+    background-position: center; /* 이미지를 중앙에 정렬 */
+    color: #333; /* 텍스트 색상 */
+    text-align: center; /* 텍스트를 중앙 정렬 */
+    padding: 50px; /* 내부 여백 */
+    width: 450px;
+    height: 400px;
+    
+    transform-origin: center; /* 회전 중심을 중앙으로 설정 */
 }
 
-#recommendation-form label,
-#recommendation-form input,
-#recommendation-form textarea,
-#recommendation-form button {
+
+
+#ballon label,
+#ballon input,
+#ballon textarea,
+#ballon button {
     width: 50%;
     margin-bottom: 15px;
     padding: 10px;
@@ -141,14 +153,14 @@ body h1,h2 {
     
 }
 
-#recommendation-form button {
+#ballon button {
     background-color: #2617eb;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-#recommendation-form button:hover {
+#ballon button:hover {
     background-color: #555;
 }
 

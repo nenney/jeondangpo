@@ -1,6 +1,6 @@
 /* 전체 페이지 스타일 */
 body {
-    background-color: #FFFFFF;
+    background-color: #0B0806;
     color: #333;
     margin: 0;
     padding: 0;
@@ -299,6 +299,6 @@ body, #about, #bye {
     margin-right: auto;
     border-radius: 15px;
     background-color: #ffa500;
-
+    margin-top: 30px;
 }
 
