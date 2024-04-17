@@ -43,20 +43,15 @@ async function openModal(dataKey) {
 
             // 모달에 데이터 표시(우리 팀 내용에 따라 수정 필요)
             document.getElementById('modalName').innerText = data.name;
+            document.getElementById('modalAge').innerText = data.age;
+            document.getElementById('modalHome').innerText = data.home;
             document.getElementById('modalOne').innerText = data.one;  //소개한마디
             document.getElementById('modalMBTI').innerText = data.mbti;
             document.getElementById('modalBlog').innerText = data.blog;
             document.getElementById('modalGoal').innerText = data.goal;
             document.getElementById('modalHobby').innerText = data.hobby;
             document.getElementById('modalPro').innerText = data.pro;  //장점
-            document.getElementById('modalContent').innerText = data.content;
-<<<<<<< HEAD
-=======
-
-            //modalPhoto의 src 속성 설정
-            const modalPhoto = document.getElementById('modalPhoto');
-            modalPhoto.src = data.photo; // data.photo는 이미지 URL
->>>>>>> e142c9d8697386eaba2cd121dd67f5047a7ab766
+            document.getElementById('modalInfo').innerText = data.info;
 
             //modalPhoto의 src 속성 설정
             const modalPhoto = document.getElementById('modalPhoto');

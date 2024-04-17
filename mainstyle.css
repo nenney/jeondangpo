@@ -60,16 +60,12 @@ header {
     color: #ffa500;
 }
 
-.modal-body {
-    display: flex;
-    align-items: center;
-}
-
-.modal-content {
-    width: 800px;
-}
-
 #modalPhoto {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px #222;
+    display: block;
+    width: 300px;
     margin-right: 30px;
 }
 
@@ -152,3 +148,48 @@ header {
     
 }
 
+.modal-body {
+    display: flex;
+    align-items: center;
+}
+
+.modal-body2 {
+    width: 300px;
+    margin-left: 10px;
+    margin-top: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.modal-body3 {
+    display: grid;
+    justify-content: end;
+    float: right;
+}
+
+.modal-name, .modal-age, .modal-home, .modal-MBTI {
+    border: 1px #222 solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #222;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.modal-one, .modal-blog, .modal-goal, .modal-hobby, .modal-pro, .modal-info {   
+    border: 1px #222 solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #222;
+    padding: 4px;
+}
+
+.modal-dialog {
+    max-width: 900px;
+    margin: 0 auto;
+    transform: translateX(-50%);
+}
+
+.modal-content {
+    width: 100%;
+    max-width: none;
+}
