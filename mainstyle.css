@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #0B0806;
+    background-color: #0b0806;
     background-image: url('image/team.jpg');
     background-size: 1700px auto;
     background-position: calc(50% + 250px) calc(50% - 730px);
@@ -214,19 +214,19 @@ header {
 
 #tmiTitle{
     font-weight: bold;
-    font-size: 60px;
+    font-size: 80px;
     color: red;
-    padding-top:100px;
-    margin-left: 900px;
-    text-shadow: 2px 2px 4px rgb(43, 0, 255);
+    padding-top:110px;
+    margin-left: 700px;
+    text-shadow: 2px 2px 4px rgb(247, 152, 152);
 }
 
 #tmiInfo{
     font-weight: bold;
     font-size: 30px;
-    color: black;
-    padding-top:50px;
-    margin-left: 900px;
+    color: rgb(30, 30, 30);
+    padding-top:10px;
+    margin-left: 850px;
 }
 
 
