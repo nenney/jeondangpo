@@ -24,7 +24,21 @@ header {
     background-color: #222; /* 어두운 회색 배경 */
     border-top: 2px solid #ff4500; /* 빨간색 상단 테두리 추가 */
     border-bottom: 2px solid #ff4500; /* 빨간색 하단 테두리 추가 */
+    padding-top: 4px;
+    padding-bottom: 7px;
+}
 
+
+
+.logo {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 80px; /* 전당포 글씨 크기 증가 */
+    /* font-weight: bold; */
+    text-decoration: none;
+    color: #ffa500; /* 주황색으로 강조 */
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-menu {
@@ -51,19 +65,6 @@ header {
 
 .nav-menu li a:hover {
     color: #ff4500; /* 호버 시 빨간색으로 변경 */
-}
-
-
-/*헤더 글(전당포)*/
-.logo {
-    font-family: 'Abril Fatface', cursive;
-    font-size: 80px; /* 전당포 글씨 크기 증가 */
-    /* font-weight: bold; */
-    text-decoration: none;
-    color: #ffa500; /* 주황색으로 강조 */
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 
@@ -258,7 +259,7 @@ header {
     margin-top: 4px; /* 위 여백 설정 */
 }
 .container {
-    display: flex; /* flexbox 사용 */
+    display: flex; 
     justify-content: space-between; /* 섹션 간에 동일한 간격으로 정렬 */
     flex-wrap: wrap; /* 요소들이 넘치면 다음 줄로 넘어가게 설정 */
 }
