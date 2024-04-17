@@ -7,7 +7,7 @@ body {
     padding: 0;
     line-height: 1.6;
     background-image: url('recom.gif');
-    background-size: 1300px auto;
+    background-size: 1200px auto;
     background-position: calc(50% + 250px) calc(30% - 100px);
     background-repeat: no-repeat;
 }
