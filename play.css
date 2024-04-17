@@ -1,11 +1,15 @@
 /* 전체 페이지 스타일 */
 body {
     font-family: 'Noto Serif KR', serif;
-    background-color: #f5f5f5;
+    background-color: #0B0806;
     color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-image: url('recom.gif');
+    background-size: 1300px auto;
+    background-position: calc(50% + 250px) calc(30% - 100px);
+    background-repeat: no-repeat;
 }
 
 /* 헤더 스타일 */
@@ -74,22 +78,17 @@ header {
 }
 
 body h1,h2 {
-    text-align: center; /* 가운데 정렬 추가 */
+    text-align: left; /* 가운데 정렬 추가 */
+    color: white;
 }
 
-
-
-/* 음악 추천 폼 및 목록 스타일 */
-#recommendation-form {
-    margin-bottom: 30px;
-}
-
+/*아래 리스트*/
 #recommendations {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     max-width: 960px; /* 최대 너비 설정 */
-    margin: 0 auto; /* 가운데 정렬 */
+    margin: 120px auto 0; /* 가운데 정렬 */
 }
 
 .recommendation-item {
@@ -98,6 +97,7 @@ body h1,h2 {
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .recommendation-item h2 {
@@ -112,7 +112,6 @@ body h1,h2 {
 .recommendation-item iframe {
     width: 100%;
     height: 200px;
-    
     border: none;
     border-radius: 5px;
 }
@@ -120,14 +119,14 @@ body h1,h2 {
 
 /* 음악 추천 폼 및 목록 스타일 */
 #recommendation-form {
-    margin-bottom: 30px;
-    display: block; /* 기본 값으로 변경 */
-    max-width: 600px; /* 최대 너비 설정 */
+    background-color: rgba(139, 141, 141, 0.5);
+    max-width: 400px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 30px auto; /* 가운데 정렬 */
+    margin: 30px 0; /* 위아래 여백 */
+    color: white;
 }
 
 #recommendation-form label,
@@ -139,6 +138,7 @@ body h1,h2 {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    
 }
 
 #recommendation-form button {
@@ -151,3 +151,4 @@ body h1,h2 {
 #recommendation-form button:hover {
     background-color: #555;
 }
+
