@@ -72,8 +72,8 @@ header {
     background-image: url('1bin.jpg'); /* 이미지 파일 경로를 입력해주세요 */
     background-size: cover; /* 이미지를 섹션 내에 완전히 표시 */
     background-position: center; /* 이미지를 섹션 중앙에 배치 */
-    width: 30%; /* 섹션의 너비를 80%로 설정 */
-    height: 500px; /* 섹션의 높이를 400px로 설정 */
+    width: 32%; /* 섹션의 너비를 80%로 설정 */
+    height: 500px; /* 섹션의 높이를 500px로 설정 */
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -97,11 +97,45 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
 }
 
+#shot {
+    background-image: url('shot.png'); /* 배경 이미지 설정 */
+    background-size:cover; /* 이미지를 섹션 내에 완전히 표시 */
+    background-position: center; /* 이미지를 섹션 중앙에 배치 */
+    width: 96%; /* 섹션의 너비를 30%로 설정 */
+    height: 400px; /* 섹션의 높이를 500px로 설정 */
+    padding: 10px; /* 내부 여백 제거 */
+    margin-top: 365px; /* 이 값을 조절하여 사진의 위치를 조절 */
+
+}
+
+#shot p {
+    font-size: 1.3em; /* 내용 글자 크기를 조금 더 크게 설정 */
+    color : #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
+}
+
+#ggam {
+    background-image: url('ggam.png'); /* 배경 이미지 설정 */
+    background-size:cover; /* 이미지를 섹션 내에 완전히 표시 */
+    background-position:center; /* 이미지를 섹션 중앙에 배치 */
+    width: 96%; /* 섹션의 너비를 30%로 설정 */
+    height: 400px; /* 섹션의 높이를 500px로 설정 */
+    padding: 10px; /* 내부 여백 제거 */
+    margin-top: 2px; /* 이 값을 조절하여 사진의 위치를 조절 */
+
+}
+
+#ggam p {
+    font-size: 1.3em; /* 내용 글자 크기를 조금 더 크게 설정 */
+    color : #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
+}
+
 #bye {
     background-image: url('goodbye.jpg');
     background-size: cover; /* 이미지를 섹션 내에 완전히 표시 */
     background-position: center; /* 이미지를 섹션 중앙에 배치 */
-    width: 30%; /* 섹션의 너비를 80%로 설정 */
+    width: 34%; /* 섹션의 너비를 80%로 설정 */
     height: 500px; /* 섹션의 높이를 400px로 설정 */
     padding: 20px;
     margin-bottom: 20px;
@@ -118,7 +152,44 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
 }
 
+#wait {
+    background-image: url('wait.jpg');
+    background-size: cover; /* 이미지를 섹션 내에 완전히 표시 */
+    background-position: center; /* 이미지를 섹션 중앙에 배치 */
+    width: 100%; /* 섹션의 너비를 80%로 설정 */
+    height: 385px; /* 섹션의 높이를 400px로 설정 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: auto; /* 왼쪽 여백을 auto로 설정하여 오른쪽으로 이동 */
+    margin-right: auto;
+    margin-top: 440px; /* 이 값을 조절하여 사진의 위치를 조절 */
+}
 
+#wait p {
+    font-size: 1.3em; /* 내용 글자 크기를 조금 더 크게 설정 */
+    color : #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
+}
+
+#believe {
+    background-image: url('believe.png');
+    background-size: cover; /* 이미지를 섹션 내에 완전히 표시 */
+    background-position: center; /* 이미지를 섹션 중앙에 배치 */
+    width: 100%; /* 섹션의 너비를 100%로 설정 */
+    height: 380px; /* 섹션의 높이를 300px로 설정 */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 0; /* 왼쪽 여백을 auto로 설정하여 오른쪽으로 이동 */
+    margin-right: auto;
+    
+}
+
+#beliieve p {
+    font-size: 1.3em; /* 내용 글자 크기를 조금 더 크게 설정 */
+    color : #FFFFFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
+}
 
 #guestbook-form {
     max-width: 400px;
@@ -189,11 +260,36 @@ header {
 .container {
     display: flex; /* flexbox 사용 */
     justify-content: space-between; /* 섹션 간에 동일한 간격으로 정렬 */
+    flex-wrap: wrap; /* 요소들이 넘치면 다음 줄로 넘어가게 설정 */
 }
 
 #guestbook-container {
     flex-grow: 1; /* 남은 공간을 채우기 위해 섹션을 확장 */
     margin: 10 10px; /* 왼쪽과 오른쪽 여백 */
+}
+
+
+body, #about, #bye {
+    margin: 0;
+    padding: 0;
+}
+
+#guestbook-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.page-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: #333;
 }
 
 #nameMessage {
@@ -204,4 +300,5 @@ header {
     margin-right: auto;
     border-radius: 15px;
     background-color: #ffa500;
+
 }
