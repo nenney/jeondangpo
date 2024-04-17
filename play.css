@@ -31,14 +31,14 @@ header {
     border-bottom: 2px solid #ff4500; /* 빨간색 하단 테두리 추가 */
 }
 
-/* .container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 1200px;
     padding: 0 20px;
-} */
+} 
 
 .logo {
     font-family: 'Abril Fatface', cursive;
