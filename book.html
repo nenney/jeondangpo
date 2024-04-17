@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- CSS 링크 및 스타일 시트 -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- 헤더 영역 -->
@@ -19,7 +21,7 @@
                 <li><a href="#">팀소개</a></li>
                 <li><a href="#">방명록</a></li>
                 <li><a href="#">뮤직 플레이리스트</a></li>
-                </ul>
+            </ul>
         </nav>
     </header>
 
@@ -27,39 +29,59 @@
     <main>
         <!-- 팀 소개 섹션 -->
         <div class="container">
-        <div id="about">
-            <h2>방명록</h2>
-            <p>글 남기고 가라..</p>
+            <div id="about">
+                <h2>방명록</h2>
+                <p>글 남기고 가라..</p>
+                <div id="shot">
+                    <p> 댓글 써!!!!</p>
+                </div>
+                <div id="ggam">
+                    <p>글 좀 남기고 가라 쫌!!!</p>
+                </div>
+            </div>
+
+
+
+
+            <!-- 방명록 입력 폼 -->
+            <div id="guestbook-container">
+                <form id="guestbook-form">
+                    <input type="text" id="name" placeholder="이름" required>
+                    <button type="submit">전송</button>
+                    <textarea id="message" placeholder="메시지" required></textarea>
+
+                </form>
+
+                <!-- 페이지네이션을 위한 목록 -->
+                <div id="guestbook-pagination">
+                    <!-- 나머지 페이지 버튼은 JavaScript에서 추가됩니다. -->
+                </div>
+
+                <br><br><br>
+                <!-- 방명록 목록 -->
+                <ul id="guestbook-list">
+                </ul>
+            </div>
+            <div id="bye">
+                <p>잘 남기고 간다.</p>
+
+                <div id="wait">
+                    <p>댓글 남긴거 맞지?</p>
+                </div>
+
+                <section id="believe">
+                    <P>믿고 간다...</P>
+                </section>
+            </div>
+
+
+
         </div>
-    
-
-       
-
-        <!-- 방명록 입력 폼 -->
-        <div id="guestbook-container">
-    <form id="guestbook-form">
-        <input type="text" id="name" placeholder="이름" required>
-        <button type="submit">전송</button>
-        <textarea id="message" placeholder="메시지" required></textarea>
-        
-    </form>
-
-    <br><br><br>
-     <!-- 방명록 목록 -->
-     <ul id="guestbook-list">
-    </ul>
-</div>
-
-<div id="bye">
-    <p>잘 남기고 간다.</p>
-</div>
-</div>
-      <!-- Firebase 및 방명록 스크립트 로드 -->
-      <script type="module" src="guestbook.js"></script>
-    
-      
+        <!-- Firebase 및 방명록 스크립트 로드 -->
+        <script type="module" src="guestbook.js"></script>
 
     </main>
 
 </body>
+
 </html>
