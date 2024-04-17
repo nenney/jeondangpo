@@ -104,7 +104,7 @@ header {
     width: 96%; /* 섹션의 너비를 30%로 설정 */
     height: 400px; /* 섹션의 높이를 500px로 설정 */
     padding: 10px; /* 내부 여백 제거 */
-    margin-top: 365px; /* 이 값을 조절하여 사진의 위치를 조절 */
+    margin-top: 250px; /* 이 값을 조절하여 사진의 위치를 조절 */
 
 }
 
@@ -121,7 +121,7 @@ header {
     width: 96%; /* 섹션의 너비를 30%로 설정 */
     height: 400px; /* 섹션의 높이를 500px로 설정 */
     padding: 10px; /* 내부 여백 제거 */
-    margin-top: 2px; /* 이 값을 조절하여 사진의 위치를 조절 */
+    margin-top: 0px; /* 이 값을 조절하여 사진의 위치를 조절 */
 
 }
 
@@ -162,7 +162,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-left: auto; /* 왼쪽 여백을 auto로 설정하여 오른쪽으로 이동 */
     margin-right: auto;
-    margin-top: 440px; /* 이 값을 조절하여 사진의 위치를 조절 */
+    margin-top: 420px; /* 이 값을 조절하여 사진의 위치를 조절 */
 }
 
 #wait p {
@@ -300,5 +300,6 @@ body, #about, #bye {
     margin-right: auto;
     border-radius: 15px;
     background-color: #ffa500;
-
+    margin-top: 30px;
 }
+
