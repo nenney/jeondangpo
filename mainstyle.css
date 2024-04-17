@@ -96,6 +96,15 @@ header {
     text-decoration: none;
 }
 
+#introduceTeam{
+    font-family: 'Noto Serif KR', serif;
+    font-weight: bold; /* 강조된 텍스트 */
+    font-style: italic;
+    color: white;
+    font-size: 60px;
+    text-decoration: none;
+}
+
 #modalPhoto {
     border: 1px solid #fff;
     border-radius: 20px;

@@ -53,3 +53,64 @@ onSnapshot(q, (snapshot) => {
         guestbookList.appendChild(li);
     });
 });
+
+// 페이지네이션 코드
+document.addEventListener('DOMContentLoaded', function() {
+    const itemsPerPage = 10;
+    let currentPage = 1;
+
+    function showPage(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const guestbookItems = document.querySelectorAll('#guestbook-list li');
+        
+        guestbookItems.forEach((item, index) => {
+            if (index >= start && index < end) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    function createPagination(totalPages) {
+        const pagination = document.getElementById('guestbook-pagination');
+        
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement('button');
+            btn.classList.add('page-btn');
+            btn.textContent = i;
+            btn.dataset.page = i;
+            pagination.appendChild(btn);
+        }
+
+        showPage(currentPage);
+
+        pagination.addEventListener('click', function(e) {
+            if (e.target.classList.contains('page-btn')) {
+                currentPage = parseInt(e.target.dataset.page);
+                updatePagination(totalPages);
+            }
+        });
+    }
+
+    function updatePagination(totalPages) {
+        const pageBtns = document.querySelectorAll('.page-btn');
+        pageBtns.forEach(btn => {
+            if (parseInt(btn.dataset.page) === currentPage) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        showPage(currentPage);
+    }
+
+    onSnapshot(q, (snapshot) => {
+        const totalItems = snapshot.size;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        
+        createPagination(totalPages);
+    });
+});
+

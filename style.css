@@ -1,6 +1,6 @@
 /* 전체 페이지 스타일 */
 body {
-    background-color: #f5f5f5;
+    background-color: #222;
     color: #333;
     margin: 0;
     padding: 0;
@@ -265,4 +265,39 @@ header {
 #guestbook-container {
     flex-grow: 1; /* 남은 공간을 채우기 위해 섹션을 확장 */
     margin: 10 10px; /* 왼쪽과 오른쪽 여백 */
+}
+
+
+body, #about, #bye {
+    margin: 0;
+    padding: 0;
+}
+
+#guestbook-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.page-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: #333;
+}
+
+#nameMessage {
+    width:500px;
+    height:150px;
+    padding-top: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: #ffa500;
+
 }
