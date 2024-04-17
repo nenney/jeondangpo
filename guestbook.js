@@ -48,7 +48,7 @@ onSnapshot(q, (snapshot) => {
         const li = document.createElement('li');
         const date = data.timestamp.toDate();
         li.innerHTML = `
-            <strong>${data.name}</strong>  <span>${data.message}</span> (${date.toLocaleDateString()} ${date.toLocaleTimeString()}): 
+            <strong>${data.name}</strong>  <span>${data.message}</span> (${date.toLocaleDateString()} ${date.toLocaleTimeString()})
         `;
         guestbookList.appendChild(li);
     });

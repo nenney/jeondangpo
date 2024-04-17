@@ -12,15 +12,18 @@
 
 <body>
 
-    <!-- 헤더 영역 -->
-    <header>
-        <h1>전당포</h1>
 
-        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-            <ul>
-                <li><a href="#">팀소개</a></li>
-                <li><a href="#">방명록</a></li>
-                <li><a href="#">뮤직 플레이리스트</a></li>
+
+
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="main.html" class="logo">전 당 포</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="main.html">팀소개</a></li>
+                <li><a href="book.html">방명록</a></li>
+                <li><a href="music.html">플레이리스트</a></li>
             </ul>
         </nav>
     </header>
@@ -37,20 +40,22 @@
                 </div>
                 <div id="ggam">
                     <p>글 좀 남기고 가라 쫌!!!</p>
-                </div>
+                </div> 
             </div>
+
 
 
 
 
             <!-- 방명록 입력 폼 -->
             <div id="guestbook-container">
-                <form id="guestbook-form">
-                    <input type="text" id="name" placeholder="이름" required>
-                    <button type="submit">전송</button>
-                    <textarea id="message" placeholder="메시지" required></textarea>
-
-                </form>
+                <div id="nameMessage">
+                    <form id="guestbook-form">
+                        <input type="text" id="name" placeholder="이름" required>
+                        <button type="submit">등록</button>
+                        <textarea id="message" placeholder="메시지" required></textarea>
+                    </form>
+                </div>
 
                 <!-- 페이지네이션을 위한 목록 -->
                 <div id="guestbook-pagination">
@@ -83,5 +88,6 @@
     </main>
 
 </body>
+
 
 </html>

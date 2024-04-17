@@ -4,38 +4,53 @@
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
+body {
+    background-color: #0B0806;
+    background-image: url('image/team.jpg');
+    background-size: 1700px auto;
+    background-position: calc(50% + 250px) calc(50% - 50px);
+    background-repeat: no-repeat;
 }
 
+
+
+/* 헤더 스타일 */
+header {
+    background-color: #1e1e1e; /* 짙은 회색 배경 */
+    color: #fff;
+    padding: 20px 0; /* 상단과 하단의 패딩을 늘림 */
+    text-align: center;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* 더 깊은 그림자 효과 */
+}
+
+/* 네비게이션 스타일 */
 .navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #222; /* 어두운 회색 배경 */
+    border-top: 2px solid #ff4500; /* 빨간색 상단 테두리 추가 */
+    border-bottom: 2px solid #ff4500; /* 빨간색 하단 테두리 추가 */
 }
 
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    /* 최대 너비 설정 */
     padding: 0 20px;
-}
+} */
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 80px; /* 전당포 글씨 크기 증가 */
+    /* font-weight: bold; */
     text-decoration: none;
-    color: #fff;
+    color: #ffa500; /* 주황색으로 강조 */
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
-    /* 로고 아래 여백 설정 */
 }
 
 .nav-menu {
@@ -47,18 +62,42 @@ header {
 }
 
 .nav-menu li {
-    margin-right: 20px;
+    margin-left: 100px;
+    margin-right: 50px;
 }
 
 .nav-menu li a {
+    font-family: 'Noto Serif KR', serif;
     text-decoration: none;
     color: #fff;
     transition: color 0.3s ease;
+    font-size: 25px; /* 네비게이션 글씨 크기 증가 */
+    font-weight: bold; /* 강조된 텍스트 */
 }
 
 .nav-menu li a:hover {
-    color: #ffa500;
+    color: #ff4500; /* 호버 시 빨간색으로 변경 */
 }
+
+
+#teamBox {
+    height: 650px;
+    padding-top: 150px;
+    padding-left: 400px;
+
+}
+
+#introduceTeam{
+    font-family: 'Noto Serif KR', serif;
+    font-weight: bold; /* 강조된 텍스트 */
+    font-style: italic;
+    color: white;
+    font-size: 60px;
+    text-decoration: none;
+}
+
+
+
 
 .modal-body {
     display: flex;
@@ -92,16 +131,36 @@ header {
     text-align: center;
 }
 
+#introduceBox{
+    /* max-width: 1700px; */
+    margin-left: auto;
+    margin-right: auto;
+
+
+}
+
 #introduce {
-    font-size: 3rem; /* 더 큰 글꼴 크기 */
-    font-weight: bold; /* 더 굵은 글꼴 */
+    font-family: 'Noto Serif KR', serif;
+    font-size: 45px; /* 더 큰 글꼴 크기 */
+    font-weight: bold;
     color: #ffd700; /* 텍스트 색상을 더 진한 옐로우로 변경 */
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* 글꼴에 그림자 추가 */
+    /* text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);  */
+    /* text-decoration : underline; */
     background-color: #222; /* 배경색을 더 어두운 회색으로 변경 */
-    padding: 20px; /* 내부 여백 추가 */
-    margin-top: 50px; /* 위쪽 여백 추가 */
+    padding-top: 35px; /* 내부 여백 추가 */
+    padding-bottom: 20px; /* 내부 여백 추가 */
     text-align: center; /* 가운데 정렬 */
     margin-bottom: 0; /* 아래쪽 여백 제거 */
+}
+
+#introduce::after {
+    content: ""; /* 가상 요소 내용 없음 */
+    position: absolute; /* 절대 위치 지정 */
+    left: 0; /* 왼쪽 정렬 */
+    bottom: -45px; /* 텍스트 아래로 이동하여 밑줄의 높이 조정 */
+    width: 100%; /* 너비를 텍스트 너비로 설정 */
+    height: 1.5px; /* 밑줄 높이 지정 */
+    background-color: #ffd700; /* 밑줄 색상 지정 */
 }
 
 #imageContainer {
