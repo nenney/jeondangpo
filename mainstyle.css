@@ -203,6 +203,12 @@ header {
   background-image: url("image/tmi.jpg");
 }
 
+@keyframes pulse {
+  0% { font-size: 80px; }
+  50% { font-size: 87px; }
+  100% { font-size: 80px; }
+}
+
 #tmiTitle {
   font-weight: bold;
   font-size: 80px;
@@ -210,7 +216,9 @@ header {
   padding-top: 110px;
   margin-left: 700px;
   text-shadow: 2px 2px 4px rgb(247, 152, 152);
+  animation: pulse 0.7s infinite; /* 1초 간격으로 반복 */
 }
+
 
 #tmiInfo {
   font-weight: bold;
