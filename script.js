@@ -47,7 +47,7 @@ async function openModal(dataKey) {
             document.getElementById('modalHome').innerText = data.home;
             document.getElementById('modalOne').innerText = data.one;  //소개한마디
             document.getElementById('modalMBTI').innerText = data.mbti;
-            document.getElementById('modalBlog').innerText = data.blog;
+            document.getElementById('modalBlog').innerHTML = '<a href="' + data.blog + '" target="_blank">' + data.blog + '</a>';
             document.getElementById('modalGoal').innerText = data.goal;
             document.getElementById('modalHobby').innerText = data.hobby;
             document.getElementById('modalPro').innerText = data.pro;  //장점
