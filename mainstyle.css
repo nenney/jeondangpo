@@ -24,15 +24,6 @@ header {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* 더 깊은 그림자 효과 */
 }
 
-/*.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-} */
-
 /* 네비게이션 스타일 */
 .navbar {
   display: flex;
@@ -131,24 +122,19 @@ header {
 }
 
 #introduceBox {
-  /* max-width: 1700px; */
   margin-left: auto;
   margin-right: auto;
 }
 
 #introduce {
-  /* font-family: 'Noto Serif KR', serif; */
-  font-size: 45px; /* 더 큰 글꼴 크기 */
+  font-size: 45px; 
   font-weight: bold;
-  color: #ffd700; /* 텍스트 색상을 더 진한 옐로우로 변경 */
-  /* text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);  */
-  /* text-decoration : underline; */
-  background-color: #222; /* 배경색을 더 어두운 회색으로 변경 */
-  padding-top: 35px; /* 내부 여백 추가 */
-  padding-bottom: 20px; /* 내부 여백 추가 */
-  text-align: center; /* 가운데 정렬 */
-  margin-bottom: 0; /* 아래쪽 여백 제거 */
-
+  color: #ffd700; 
+  background-color: #222; 
+  padding-top: 35px;
+  padding-bottom: 20px; 
+  text-align: center; 
+  margin-bottom: 0; 
   text-shadow: 2px 2px 4px rgb(55, 0, 221);
 }
 
@@ -157,25 +143,18 @@ header {
   justify-content: center; /* 이미지들을 가운데 정렬 */
   gap: 100px; /* 이미지들 사이의 간격 설정 */
   flex-wrap: wrap; /* 이미지들이 넘칠 경우 다음 줄로 넘어가게 함 */
-  background-color: #ece6cc; /* 배경색을 어두운 회색으로 변경 */
-  margin-top: 0; /* 위쪽 여백 제거 */
-  padding: 20px 0; /* 이미지 컨테이너 상단과 하단에 여백 추가 */
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
+  background-color: #ece6cc; 
+  margin-top: 0; 
+  padding: 20px 0; 
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); 
 }
 
 #imageContainer img {
   max-width: 200px;
-  /* 이미지의 가로 너비를 200px로 설정 */
   height: 200px;
-  /* 비율에 맞게 높이를 자동으로 조정 */
   margin-top: 20px;
   margin-bottom: 20px;
-  /* 이미지 아래 여백 추가 (선택사항) */
-
   border-radius: 50%;
-  /* 이미지를 원형으로 만듦 */
-  /* border: 2px solid #ccc; */
-  /* 테두리 추가 (선택사항) */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* 보다 짙은 그림자 효과 */
   transition: transform 0.3s ease-in-out;
   animation: rotateImage 5s infinite linear; /* 이미지를 5초 동안 무한히 회전시키는 애니메이션 추가 */
@@ -192,9 +171,8 @@ header {
 }
 
 #imageContainer img:hover {
-  transform: scale(1.1) rotate(10deg); /* 마우스를 올릴 때 이미지를 약간 회전시켜 보다 포스 있는 느낌을 줌 */
+  transform: scale(1.1) rotate(10deg);
   filter: grayscale(0%) brightness(100%) contrast(100%);
-  /* 마우스 호버 시 필터 제거하여 이미지를 원래대로 복원 */
 }
 
 .tmiBox {
@@ -263,8 +241,6 @@ header {
   position: relative; /* 부모 요소에 대해 상대적인 위치 지정 */
   width: 500px;
   height: 500px;
-  /* background-color: #ffffff;
-    padding-top: 100px; */
   background-image: url("image/teeth.jpg");
   background-size: cover;
   margin-right: 200px;
@@ -272,11 +248,10 @@ header {
 }
 
 #mind {
-  font-size: 70px; /* 더 큰 글꼴 크기 */
+  font-size: 70px;
   font-weight: bold;
   /* text-align: center; */
-  color: black; /* 텍스트 색상을 더 진한 옐로우로 변경 */
-
+  color: black; 
   position: absolute;
   padding-top: 40px;
   padding-left: 30px;
@@ -291,11 +266,9 @@ header {
 }
 
 #rule_blackboard {
-  font-size: 30px; /* 더 큰 글꼴 크기 */
+  font-size: 30px;
   font-weight: bold;
-  /* text-align: center; */
-  color: white; /* 텍스트 색상을 더 진한 옐로우로 변경 */
-
+  color: white; 
   padding-top: 130px;
   padding-left: 130px;
 }

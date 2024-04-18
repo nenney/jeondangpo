@@ -1,4 +1,3 @@
-/* 전체 페이지 스타일 */
 body {
     font-family: 'Noto Serif KR', serif;
     background-color: #0B0806;
@@ -12,36 +11,32 @@ body {
     background-repeat: no-repeat;
 }
 
-/* 헤더 스타일 */
 header {
-    background-color: #1e1e1e; /* 짙은 회색 배경 */
+    background-color: #1e1e1e; 
     color: #fff;
-    padding: 20px 0px; /* 상단과 하단의 패딩을 늘림 */
+    padding: 20px 0px; 
     text-align: center;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* 더 깊은 그림자 효과 */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
     
 }
 
-/* 네비게이션 스타일 */
 .navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #222; /* 어두운 회색 배경 */
-    border-top: 2px solid #ff4500; /* 빨간색 상단 테두리 추가 */
-    border-bottom: 2px solid #ff4500; /* 빨간색 하단 테두리 추가 */
+    background-color: #222; 
+    border-top: 2px solid #ff4500; 
+    border-bottom: 2px solid #ff4500; 
     padding-top: 4px;
     padding-bottom: 7px;
 }
 
 
-
 .logo {
     font-family: 'Abril Fatface', cursive;
-    font-size: 80px; /* 전당포 글씨 크기 증가 */
-    /* font-weight: bold; */
+    font-size: 80px;
     text-decoration: none;
-    color: #ffa500; /* 주황색으로 강조 */
+    color: #ffa500;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -66,20 +61,20 @@ header {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s ease;
-    font-size: 25px; /* 네비게이션 글씨 크기 증가 */
-    font-weight: bold; /* 강조된 텍스트 */
+    font-size: 25px; 
+    font-weight: bold; 
 }
 
 .nav-menu li a:hover {
-    color: #ff4500; /* 호버 시 빨간색으로 변경 */
+    color: #ff4500; 
 }
 
 body h2 {
-    text-align: center; /* 가운데 정렬 추가 */
+    text-align: center; 
     color: black;
 }
 body h1 {
-    text-align: center; /* 가운데 정렬 추가 */
+    text-align: center; 
     color: black;
     margin-left: -50px;
 }
@@ -89,8 +84,8 @@ body h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    max-width: 960px; /* 최대 너비 설정 */
-    margin: 120px auto 0; /* 가운데 정렬 */
+    max-width: 960px; 
+    margin: 120px auto 0; 
 }
 
 .recommendation-item {
@@ -121,18 +116,17 @@ body h1 {
 }
 
 
-/* 음악 추천 폼 및 목록 스타일 */
+
 #ballon {
     position: relative;
-    background-image: url('ballon.jpg'); /* ballon 이미지 경로를 적어주세요 */
-    background-size: cover; /* 이미지를 div 크기에 맞게 조절 */
-    background-position: center; /* 이미지를 중앙에 정렬 */
-    color: #333; /* 텍스트 색상 */
-    text-align: center; /* 텍스트를 중앙 정렬 */
-    padding: 50px; /* 내부 여백 */
+    background-image: url('ballon.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: #333; 
+    text-align: center; 
+    padding: 50px; 
     width: 450px;
     height: 400px;
-    
     transform-origin: center; /* 회전 중심을 중앙으로 설정 */
 }
 
@@ -147,7 +141,6 @@ body h1 {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    
 }
 
 #ballon button {
