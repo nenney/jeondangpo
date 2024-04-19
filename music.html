@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>플레이리스트</title>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <!-- CSS 링크 및 스타일 시트 -->
     <link rel="stylesheet" href="play.css">
 </head>
@@ -28,16 +28,18 @@
     <!-- 음악 정보 입력 -->
     <div id="ballon"> 
         <h1>음악 추천 해줄거지?</h1>
+        <form id="recommendation-form"> 
             <label for="title">곡 제목:</label>
             <input type="text" id="title" required><br>
-
+    
             <label for="reason">추천 이유:</label>
             <input type="text" id="reason" required><br>
-
+    
             <label for="videoUrl">유튜브 URL:</label>
             <input type="text" id="videoUrl" required><br>
-
+    
             <button type="submit">저장하기</button>
+        </form>
     </div>
 
     <!-- 추천 목록 -->
